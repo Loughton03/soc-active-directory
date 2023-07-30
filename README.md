@@ -1,59 +1,62 @@
 <p align="center">
 
-![image](https://github.com/Loughton03/soc-authentication/assets/78968473/7d14a45a-9cf7-4673-95ab-af2c76f3ae04)
+![image](https://github.com/Loughton03/soc-active-directory/assets/78968473/64f88fee-1609-404f-af0f-0506064577d4)
 
 </p>
 
 <h1>Azure Active Directory Overview (Users, Groups, and Access Management)</h1>
-This tutorial outlines the prerequisites and installation of the open-source help desk ticketing system osTicket.<br />
+In this part, we will explore Azure Active Directory (AAD) and observe different access levels..<br />
 
-<h2>What is osTicket?</h2>
+<h2>What is Azure Active Directory?</h2>
 
-- osTicket is a widely-used open source support ticket system. It integrates inquiries created via email, phone and web-based forms into a simple easy-to-use multi-user web interface. Manage, organize and archive all your support requests and responses in one place to provide customers with accountability and responsiveness.
+- Azure Active Directory is a cloud based identity and access management service.
 
-<h2>Environments and Technologies Used</h2>
-
-- Microsoft Azure (Virtual Machines/Compute)
-- Remote Desktop
-- Internet Information Services (IIS)
-- Heidi SQL
-
-<h2>Operating Systems Used </h2>
-
-- Windows 10</b> (21H2)
-
-<h2>List of Prerequisites</h2>
-
-- Azure Virtual Machine
-- osTicket Installation Files
-
-<h2>Installation Steps</h2>
+<h2>Actions and Observations</h2>
 
 <p>
-<img src="https://i.imgur.com/VBjp96K.png" height="80%" width="80%" alt="Resource Group Setup"/>
+ Create a user in AAD named "globalreaderjohn" and use the auto-generated password.
 </p>
-<p>
-First, we will set up a Resource Group (RG) in the Microsoft Azure Cloud Service. A resource group can be considered a folder that holds resources. We will name this resource group "osTickets" and set its location to US East. It is best practice to select the location closest to you. Please take note of the region where the RG is created, as it will be used in future instances.
-</p>
-<br />
 
 <p>
-<img src="https://i.imgur.com/DsA5UyJ.png" height="80%" width="80%" alt="Virtual Machine Setup"/>
+<img src="https://i.imgur.com/1e4MhZW.png" height="80%" width="80%" alt="New User"/>
 </p>
-<p>
-Now, we will create a virtual machine under the RG. Think of the virtual machine as a computer on the internet you can access within your computer. As before, I will set my VM region to US East. We will be using Windows 10 with 4vCPUs. I'll name the virtual machine "VM-osTicket."
-
-Next, create a username and password for your VM. Take note to remember your login credentials. I set my username to "labuser" and my password to "Password1". In the real world, never do this. You should always create a complex password. However, for this demonstration, it is okay. 
-
-Now that our machine is ready, we will connect to it using Remote Desktop Connection. Before that, let us grab the public IP address of the VM.
-</p>
-<br />
 
 <p>
-<img src="https://i.imgur.com/9a72kSn.png" height="80%" width="80%" alt="Public IP Address"/>
+<img src="https://i.imgur.com/ZOtqZBn.png" height="80%" width="80%" alt="create new user"/>
 </p>
+
+
 <p>
-My IP address is "20.231.24.25". We will use this to connect to the VM using Remote Desktop Connection.
+Assign "Tenant-Level Global Reader" to the user.
+</p>
+
+<p>
+<img src="https://i.imgur.com/PY27CLa.png" height="80%" width="80%" alt="asssign global reader"/>
+</p>
+
+<p>
+Log in as "globalreaderjohn" in an incognito window and observe the access the pressioned granted as a "Global Reader."
+
+Be sure to copy your user's "User Principal Name"
+
+</p>
+
+<p>
+<img src="https://i.imgur.com/6jQMw6K.png" height="80%" width="80%" alt="account overview"/>
+</p>
+
+<h2>
+<a href="http://portal.azure.com/">Login to Azure</a>
+</h2>
+
+<p>
+<img src="https://i.imgur.com/SR1wUf3.png" height="80%" width="80%" alt="Azure Log-in"/>
+</p>
+
+<p>
+ Azure will ask you to change the auto-generated password
+
+ 
 </p>
 <br />
 
